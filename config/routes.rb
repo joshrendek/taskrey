@@ -11,6 +11,8 @@ Taskrey::Application.routes.draw do
   
   devise_for :users
 
+  get '/tasks/quick_search', :to => "tasks#quick_search"
+
   
   root :to => "projects#index"
 

@@ -1,4 +1,16 @@
 class TasksController < ApplicationController
+
+  def quick_search
+    @s = Task.where('subject LIKE ?', "%"+params[:q]+"%")
+    user_projects = current_user.projects.collect{|p| p.id }
+    @output = ""
+    @s.each do |s|
+      if user_projects.include?(s.project_id)
+        @output += "#{s.subject}|" + project_task_path(s.project_id, s) + "\n"
+      end
+    end
+    render :text => @output
+  end
   # GET /tasks
   # GET /tasks.json
   def index

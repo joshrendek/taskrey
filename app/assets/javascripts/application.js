@@ -7,3 +7,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+ jQuery().ready(function() {
+        function log(event, data, formatted) {
+            //alert("Selected: " + data[1] + "@~@" + formatted);
+            window.location = data[1];
+        }
+
+        jQuery('#search').autocomplete("/tasks/quick_search",
+                {
+                    width: 250,
+                    max: 150,
+                    scroll: true,
+                    scrollHeight: 300
+                });
+
+        jQuery("#search").result(log).next().click(function() {
+            jQuery(this).prev().search();
+        });
+
+
+    });

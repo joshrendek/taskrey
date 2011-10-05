@@ -75,3 +75,14 @@ body { padding-top: 50px !important; padding-left: 25px !important; padding-righ
     margin-right: 10px; 
   }
 }
+
+.dropdown-menu { 
+  background-color: #066dab !important;
+  li {  
+    a { color: #fff !important;  }
+    a:hover { 
+     background: #08456B !important;  
+    }
+  }
+  
+}

@@ -12,6 +12,13 @@ Change into the directory you cloned Taskrey into. Run
 ## First use
 Go to your application (on heroku, or wherever you deployed it) and sign up. The first user is setup as the admin user.
 
+## Keeping up to date
+Go to your application directory and just issue a pull and push to heroku (or wherever you deployed to):
+    git pull
+    git push heroku master
+    herou rake db:migrate
+
+
 ## Screenshots
 http://bluescripts.s3-website-us-east-1.amazonaws.com/taskrey/Taskrey.png
 
