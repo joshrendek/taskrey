@@ -1,0 +1,64 @@
+<div  class="project_header">
+<h2>
+  <%=link_to @project.title, @project %>     
+  &raquo; <%= @task.subject %> 
+</h2>
+<%= form_for [@project, @task] do |f| %>
+  <%= link_to "Edit",  edit_project_task_path(@project, @task), :class => "btn primary btnsmall" %>
+  <% if @task.closed == 1 %>
+    <%= f.hidden_field :closed, :value => '0' %>
+    <%= f.submit "Re-open", :class => "btn error" %>
+  <% else %>
+    <%= f.hidden_field :closed, :value => '1' %>
+    <%= f.submit "Mark as Completed", :class => "btn success" %> 
+  <% end %>
+<% end %>
+</div>
+<div class="clear"></div>
+
+<table class="noborder">
+  <tr>
+    <td><b>Due date</b></td>
+    <td><b>Author</b></td>
+    <td><b>Assigned to</b></td>
+  </tr>
+  <tr>
+    <td><%= @task.due_date %></td>
+    <td><%= @task.author.email %></td>
+    <td><%= @task.assigned.email %></td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Task description</b></td>
+  </tr>
+  <tr>
+
+    <td colspan="3"><%= raw BlueCloth.new(@task.description).to_html %></td>
+  </tr>
+  <% if @attachments.size > 0 %>
+    <tr>
+      <td colspan="3"><b>Attachments:</b></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <% @attachments.each do |a| %>
+          <div class="attachment">
+            <%=attachment_helper(a)%><br>
+            <%=attachment_name(a)%>
+            <%= link_to '[x]', project_task_attachment_path(@project, @task, a), confirm: 'Are you sure?', method: :delete %>
+          </div>
+        <% end %>
+      </td>
+    </tr>
+  <% end %> 
+
+  <tr>
+    <td colspan="3"><b>Add attachment:</b></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <%= render 'attachments/form' %>
+    </td>
+  </tr>
+</p>
+
+

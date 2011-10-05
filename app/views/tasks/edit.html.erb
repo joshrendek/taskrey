@@ -1,0 +1,10 @@
+<div  class="project_header">
+<h2>
+  <%=link_to @project.title, @project %>     
+  &raquo; <%= link_to @task.subject, project_task_path(@project, @task) %> 
+</h2>
+</div>
+<div class="clear"></div>
+
+<%= render 'form' %>
+

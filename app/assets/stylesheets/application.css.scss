@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+.topbar-inner,.topbar .fill{
+ background: #066dab; /* Old browsers */
+background: -moz-linear-gradient(top, #066dab 0%, #084368 99%, #c5deea 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#066dab), color-stop(99%,#084368), color-stop(100%,#c5deea)) !important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #066dab 0%,#084368 99%,#c5deea 100%)  !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #066dab 0%,#084368 99%,#c5deea 100%) !important; /* Opera11.10+ */
+background: -ms-linear-gradient(top, #066dab 0%,#084368 99%,#c5deea 100%) !important; /* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#066dab', endColorstr='#c5deea',GradientType=0 ) !important; /* IE6-9 */
+background: linear-gradient(top, #066dab 0%,#084368 99%,#c5deea 100%) !important; /* W3C */
+  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:0 1px 3px rgba(0, 0, 0, 0.25),inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+body { padding-top: 50px !important; padding-left: 25px !important; padding-right: 25px !important; }
+.central_container { 
+  width: 70%; 
+}
+
+.noborder { 
+  td {
+    border-bottom: 0; 
+  }
+}
+
+.big_form { 
+  input { 
+    width: 100%; 
+    font-size: 20px;
+    height: 30px;   
+  }
+  textarea  {
+    width: 100%; 
+    height: 250px; 
+  }
+  .actions .btn { 
+    width: 80%; 
+  }
+}
+
+.project_header { 
+  h1, h2 { 
+    float: left; 
+  }
+  .btn { 
+    float: right; 
+    width: 200px; 
+    font-weight: bold; 
+  }
+  .btnsmall {
+    width: auto; 
+    margin-left: 25px; 
+  }
+}
+.login_form { 
+  width: 400px; 
+  input { width: 100%; }
+  .login_button { width: 100% !important; }
+}
+.clear { clear: both; }
+
+.attachment { float: left; text-align: center; margin-right: 15px;  }
+.upload { margin-left: 50px; } 
+.small_table { width: 40%; }
+
+.project_nav { 
+  a { 
+    float: left; 
+    margin-right: 10px; 
+  }
+}

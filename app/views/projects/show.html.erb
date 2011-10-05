@@ -1,0 +1,11 @@
+<div class="project_header">
+  <h1><%=link_to @project.title, @project %>
+</h1>
+<%= link_to "New Task", new_project_task_path(@project), :class => "btn primary" %> 
+</div> 
+<div class="clear"></div> 
+<div class="project_nav">
+<%= link_to "Open (#{@open.size})", project_task_status_path(@project, 'open') %>
+<%= link_to "Closed (#{@closed.size})", project_task_status_path(@project, 'closed') %>
+</div>
+<%= render :template => 'tasks/index' %>

@@ -1,0 +1,27 @@
+<h1>Test#index</h1>
+<p>Find me in app/views/test/index.html.erb</p>
+<%= raw s3_swf_upload_tag(
+	:fileTypes => '*.jpg;*.gif;*.png;',
+	:fileTypeDescs => 'Image files.',
+	:queueSizeLimit => 5,
+	:fileSizeLimit => 3072000,
+	:keyPrefix => 'temp/',
+	:onFileNotInQueue => "alert('File not found in the queue');",
+	:onFileSizeLimitReached => "alert('That file is too big');",
+	:onQueueChange => "queueChangeHandler(queue);",
+	:onQueueSizeLimitReached => "alert('There are too many files in the queue');",
+	:onQueueEmpty => "alert('You gotta have at least one file in there');",
+	:onQueueClear => "queueClearHandler(queue);",
+	:onUploadingStart => "uploadingStartHandler();",
+	:onUploadingFinish => "uploadingFinishHandler();",
+	:onSignatureIOError => "alert('There was an error IO');",
+	:onSignatureXMLError => "alert('There was an error XML');",
+	:onSignatureSecurityError => "alert('There was an error SECURITY');",
+	:onUploadError => "alert('There was an error UPLOAD');",
+	:onUploadIOError => "alert('There was an error UPLOADIO');",
+	:onUploadSecurityError => "alert('There was an error LOADSECURITY');",
+	:onUploadProgress => "progressHandler(progress_event);",
+	:onUploadComplete => "uploadCompleteHandler(upload_options,event);"
+) %>
+
+<input type="submit" value="Start Uploading" onclick="s3_swf_1_object.startUploading();" />

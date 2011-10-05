@@ -1,0 +1,30 @@
+<div class="project_header">
+  <h2><%= link_to @project.title, @project %> &raquo; Manage Users</h2>
+</div>
+<div class="clear"></div>
+
+<%= form_for [@project, @project_users] do |f| %>
+  <table class="noborder big_form">
+    <tr>
+      <td colspan="2"><b>Assigned To</b></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= collection_select(:project_users, :user_id, User.all, :id, :email) %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Add User", :class => "btn success" %></td>
+    </tr>
+  </table>
+<% end %>
+<table class="noborder small_table">
+  <thead>
+    <th>User</th>
+    <th>Action</th>
+  </thead>
+  <% @project_user_list.each do |pu| %>
+    <tr>
+      <td><%=pu.user.email%></td>
+      <td><%=link_to "Delete", project_project_user_path(@project, pu), method: :delete, confirm: "Are you sure?", class: "btn error" %></td>
+    </tr>
+  <% end %>
+</table>

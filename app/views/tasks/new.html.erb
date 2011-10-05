@@ -1,0 +1,10 @@
+<div  class="project_header">
+<h2>
+  <%=link_to @project.title, @project %>     
+  &raquo; New Task 
+</h2>
+</div>
+<div class="clear"></div>
+<%= render 'form' %>
+
+<%= link_to 'Back', project_tasks_path(params[:project_id]) %>

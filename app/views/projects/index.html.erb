@@ -1,0 +1,30 @@
+<div  class="project_header">
+<h2>
+  Projects 
+</h2>
+<%= link_to "New Project", new_project_path, :class => "btn primary" %>
+</div>
+<div class="clear"></div>
+<table>
+  <tr>
+    <th>Project Name</th>
+    <th>Open Tasks</th>
+    <% if current_user.admin == 1 %>
+      <th>Admin</th>
+    <% end %>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= link_to project.title, project %></td>
+    <td><%= project.tasks.count %></td>
+    <% if current_user.admin == 1 %>
+      <td><%= link_to "Manage Users", project_project_users_path(project) %></td>
+    <% end %>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,31 @@
+<h2>Sign In</h2>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <table class="noborder login_form">
+    <tr>
+      <td><b>Email</b></td>
+    </tr>
+    <tr>
+      <td><%= f.email_field :email %></td>
+    </tr>
+    <tr>
+      <td><b>Password</b></td>
+    </tr>
+    <tr>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td>
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> Remember Me</div>
+        <% end -%>
+      </td>
+    </tr>
+    <tr>
+      <td>
+
+        <%= f.submit "Sign in", :class => "btn success login_button" %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+<%= render :partial => "devise/shared/links" %>

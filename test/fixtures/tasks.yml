@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  subject: MyString
+  description: MyText
+  due_date: 2011-10-01
+  author_id: 1
+  assigned_to_id: 1
+
+two:
+  project_id: 1
+  subject: MyString
+  description: MyText
+  due_date: 2011-10-01
+  author_id: 1
+  assigned_to_id: 1

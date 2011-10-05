@@ -1,0 +1,63 @@
+<%= form_for([Project.find(params[:project_id]), @task]) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<table class="noborder big_form">
+  <tr>
+    <td colspan="2"><b>Subject</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.text_field :subject %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Description</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.text_area :description %></td>
+  </tr>
+
+
+  <tr>
+    <td colspan="2"><b>Due Date</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= f.date_select :due_date %></td>
+  </tr>
+
+
+
+
+  <tr>
+    <td colspan="2"><b>Assigned To</b></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= collection_select(:task, :assigned_to_id, User.all, :id, :email) %></td>
+  </tr>
+  <% if controller.action_name != "edit" %>
+  <tr>
+    <td colspan="2">
+      <%= f.fields_for :attachments do |builder| %>
+        <%= render 'attachment_field', :f => builder %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+
+  <tr>
+    <td colspan="2">
+      <div class="actions">
+        <%= f.submit controller.action_name.capitalize + " Task", :class => "btn primary" %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<% end %>

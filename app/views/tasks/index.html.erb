@@ -1,0 +1,25 @@
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Due date</th>
+    <th>Author</th>
+    <th>Assigned to</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= link_to task.subject, project_task_path(@project, task) %></td>
+    <td><%= task.due_date %></td>
+    <td><%= task.author.email %></td>
+    <td><%= task.assigned_to_id %></td>
+    <td><%= link_to 'Delete', project_task_path(@project, task), confirm: 'Are you sure?', method: :delete, :class => "btn error" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
