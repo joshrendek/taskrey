@@ -8,7 +8,9 @@ web-app-theme/themes/default/images/button-background.png: web-app-theme/themes/
 web-app-theme/themes/default/images/messages/error.png: web-app-theme/themes/default/images/messages/error-af549835d45c511d8638f9839b916a57.png
 web-app-theme/themes/default/images/messages/notice.png: web-app-theme/themes/default/images/messages/notice-786c6098c71c57a860803806930ed986.png
 web-app-theme/themes/default/images/messages/warning.png: web-app-theme/themes/default/images/messages/warning-87e24353d7fb558727b37232ab108c46.png
+jquery.autocomplete.pack.js: jquery.autocomplete.pack-e87a2bd3432e63a6d7887bd9b849668f.js
+jquery.autocomplete.css: jquery.autocomplete-d7a5f8cbf639ad73c8dc1d5e1a1ee16c.css
 jquery-ui.min.js: jquery-ui.min-0e8a11c7e970b57b4bf5c449cb14480d.js
 jquery.min.js: jquery.min-b11f0e0c6ff2b15efcb77ee68ca72f6d.js
-application.js: application-3acb7e701ef679c84b60329d8653d961.js
-application.css: application-c8b8db5ad47991ee1f11186735da56cf.css
+application.js: application-cdb37ea6b6f6237f39fbcc0dc5c9f430.js
+application.css: application-72dafd90305d0c37e6a7405b357f30c2.css
