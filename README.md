@@ -3,6 +3,7 @@ Clone the repository into your own folder and update the config/amazon_s3.yml fi
 
 # Deploying (to Heroku)
 Change into the directory you cloned Taskrey into. Run
-  heroku create
-  git push heroku master
-  heroku rake db:migrate
+  
+    heroku create
+    git push heroku master
+    heroku rake db:migrate
