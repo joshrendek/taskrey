@@ -5,12 +5,12 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'carrierwave'
 gem 'devise'
 gem 'fog'
 gem 'mime-types'
 gem 'bluecloth'
+gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,6 +32,7 @@ gem 'jquery-rails'
 
 group :development do
   gem 'web-app-theme', '~> 0.8.0'
+  gem 'mysql2'
 end
 
 group :test do
