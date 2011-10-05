@@ -14,6 +14,7 @@ Go to your application (on heroku, or wherever you deployed it) and sign up. The
 
 ## Keeping up to date
 Go to your application directory and just issue a pull and push to heroku (or wherever you deployed to):
+
     git pull
     git push heroku master
     herou rake db:migrate
