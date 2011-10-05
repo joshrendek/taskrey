@@ -13,5 +13,5 @@ Change into the directory you cloned Taskrey into. Run
 Go to your application (on heroku, or wherever you deployed it) and sign up. The first user is setup as the admin user.
 
 ## Screenshots
-[](http://bluescripts.s3-website-us-east-1.amazonaws.com/taskrey/Taskrey-1.png)![](http://bluescripts.s3-website-us-east-1.amazonaws.com/taskrey/thumbs/Taskrey-1.png)
+<a href="http://bluescripts.s3-website-us-east-1.amazonaws.com/taskrey/Taskrey-1.png"><img src="http://bluescripts.s3-website-us-east-1.amazonaws.com/taskrey/thumbs/Taskrey-1.png"></a>
 
