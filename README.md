@@ -9,7 +9,7 @@ Change into the directory you cloned Taskrey into. Run
     git push heroku master
     heroku rake db:migrate
 
-## First user
+## First use
 Go to your application (on heroku, or wherever you deployed it) and sign up. The first user is setup as the admin user.
 
 ## Screenshots
