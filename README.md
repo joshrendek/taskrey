@@ -1,6 +1,6 @@
 # Taskrey 
 ## Getting started
-Clone the repository into your own folder and copy the config/carrierwave.rb.sample file to config/carrierwave.rb and fill it with your information. 
+Clone the repository into your own folder and copy the config/initializers/carrierwave.rb.sample file to config/initializers/carrierwave.rb and fill it with your information. 
 
 ## Deploying (to Heroku)
 Change into the directory you cloned Taskrey into. Run
