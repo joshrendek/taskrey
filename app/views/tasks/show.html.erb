@@ -40,12 +40,11 @@
     </tr>
     <tr>
       <td colspan="3">
-        <% @attachments.each_with_index do |a, i| %>
+        <% @attachments.each do |a| %>
           <div class="attachment">
             <%=raw attachment_helper(a)%>
             <%= link_to '[x]', project_task_attachment_path(@project, @task, a), confirm: 'Are you sure?', method: :delete %>
           </div>
-          <% if i%3 == 0 %> <div class="clear"></div><% end %>
         <% end %>
       </td>
     </tr>
