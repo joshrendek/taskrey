@@ -45,6 +45,7 @@
             <%=raw attachment_helper(a)%>
             <%= link_to '[x]', project_task_attachment_path(@project, @task, a), confirm: 'Are you sure?', method: :delete %>
           </div>
+          <div class="clear"></div>
         <% end %>
       </td>
     </tr>
