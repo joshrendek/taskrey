@@ -17,7 +17,7 @@
 <% @projects.each do |project| %>
   <tr>
     <td><%= link_to project.title, project %></td>
-    <td><%= project.tasks.count %></td>
+    <td><%= project.tasks.where("closed IS NULL OR closed = 0").count %></td>
     <% if current_user.admin == 1 %>
       <td><%= link_to "Manage Users", project_project_users_path(project) %></td>
     <% end %>
