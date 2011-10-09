@@ -8,11 +8,16 @@ class ProjectsController < ApplicationController
       @projects = Project.all
     else
       @projects = current_user.projects
+      if @projects.count == 1
+        redirecting = 1
+        redirect_to project_path(@projects.first)
+      end
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @projects }
+    if redirecting.nil?
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @projects }
+      end
     end
   end
 
@@ -24,7 +29,7 @@ class ProjectsController < ApplicationController
     else
       @project = current_user.projects.find(params[:id] || params[:project_id])
     end
-   
+
     if params[:status] == "closed"
       @tasks = @project.tasks.order('id DESC').where(:closed => 1)
     else
