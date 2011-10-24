@@ -14,8 +14,8 @@
   <tr>
     <td><%= link_to task.subject, project_task_path(@project, task) %></td>
     <td><%= task.due_date %></td>
-    <td><%= task.author.email %></td>
-    <td><%= task.assigned_to_id %></td>
+    <td><%= task.author.try(:email) %></td>
+    <td><%= task.assigned.try(:email) %></td>
     <td><%= link_to 'Delete', project_task_path(@project, task), confirm: 'Are you sure?', method: :delete, :class => "btn error" %></td>
   </tr>
 <% end %>
